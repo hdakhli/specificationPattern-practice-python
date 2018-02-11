@@ -20,7 +20,7 @@ class PhoneService:
         self._phones = phones
 
     '''
-     Premium (cost >= 400)
+     Premium (cost >= 400  and not basic phones)
      return All premium phones
     '''
     def get_all_premium_phones(self):
