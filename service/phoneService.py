@@ -24,7 +24,7 @@ class PhoneService:
      return All premium phones
     '''
     def get_all_premium_phones(self):
-        return list(filter(lambda phone: phone['cost'] >= 400, self._phones))
+        return list(filter(lambda phone: phone['cost'] >= 400 and phone['type'] != 'BASIC', self._phones))
 
     '''
      return Only brand Samsung
@@ -36,7 +36,7 @@ class PhoneService:
      return Only premium brand Samsung
     '''
     def get_premium_samsung_phones(self):
-        return list(filter(lambda phone: phone['brand'] == 'SAMSUNG' and phone['cost'] >= 400, self._phones))
+        return list(filter(lambda phone: phone['brand'] == 'SAMSUNG' and phone['cost'] >= 400 and phone['type'] != 'BASIC', self._phones))
 
     '''
      return Either brand Samsung or HTC
@@ -48,7 +48,7 @@ class PhoneService:
      return All premium and brand Samsung or HTC
     '''
     def get_premium_samsung_and_htc_phones(self):
-        return list(filter(lambda phone: phone['cost'] >= 400 and (phone['brand'] == 'SAMSUNG' or phone['brand'] == 'HTC'), self._phones))
+        return list(filter(lambda phone: phone['cost'] >= 400 and phone['type'] != 'BASIC' and (phone['brand'] == 'SAMSUNG' or phone['brand'] == 'HTC'), self._phones))
 
     '''
      return All but brand Samsung
@@ -60,4 +60,4 @@ class PhoneService:
      return All premium but brand Samsung and htc
     '''
     def get_all_premium_except_samsung_and_htc_phones(self):
-        return list(filter(lambda phone: phone['cost'] >= 400 and (phone['brand'] != 'SAMSUNG' and phone['brand'] != 'HTC'), self._phones))
+        return list(filter(lambda phone: phone['cost'] >= 400 and phone['type'] != 'BASIC' and (phone['brand'] != 'SAMSUNG' and phone['brand'] != 'HTC'), self._phones))
