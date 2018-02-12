@@ -9,26 +9,26 @@ class PhoneServiceTest(unittest.TestCase):
         self.phoneService.phones = PhoneServiceTest.get_phones_list()
 
     def test_get_all_premium_phones(self):
-        self.assertEqual(13, len(self.phoneService.get_all_premium_phones()))
+        self.assertEqual(37, len(self.phoneService.get_all_premium_phones()))
 
 
     def test_get_samsung_phones(self):
         self.assertEqual(8, len(self.phoneService.get_samsung_phones()))
 
     def test_get_premium_samsung_phones(self):
-        self.assertEqual(3, len(self.phoneService.get_premium_samsung_phones()))
+        self.assertEqual(4, len(self.phoneService.get_premium_samsung_phones()))
 
     def test_get_samsung_and_htc_phones(self):
         self.assertEqual(13, len(self.phoneService.get_samsung_and_htc_phones()))
 
     def test_get_premium_samsung_and_htc_phones(self):
-        self.assertEqual(4, len(self.phoneService.get_premium_samsung_and_htc_phones()))
+        self.assertEqual(7, len(self.phoneService.get_premium_samsung_and_htc_phones()))
 
     def test_get_all_except_samsung_phones(self):
         self.assertEqual(54, len(self.phoneService.get_all_except_samsung_phones()))
 
     def test_get_all_premium_except_samsung_and_htc_phones(self):
-        self.assertEqual(9, len(self.phoneService.get_all_premium_except_samsung_and_htc_phones()))
+        self.assertEqual(30, len(self.phoneService.get_all_premium_except_samsung_and_htc_phones()))
 
     @staticmethod
     def get_phones_list():
